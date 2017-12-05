@@ -43,7 +43,7 @@ p{background-color :LightGray; font-family : "Raleway", Arial, sans-serif ; text
   <h1>Kim Eun Hye</h1>
   <div class="w3-padding-32">
     <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Home</a>
+      <a href="./" class="w3-bar-item w3-button">Home</a>
       <a href="#" class="w3-bar-item w3-button w3-light-grey w3-hide-small">Portfolio</a>
       	<a href="hello.do" class="w3-bar-item w3-button w3-hide-small">로그인</a>
       <a href="movielist.do" class="w3-bar-item w3-button w3-hide-small "> 영화목록 </a>

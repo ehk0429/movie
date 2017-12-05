@@ -88,15 +88,14 @@ text-align:center;
   <h1>Kim Eun Hye</h1>
   <div class="w3-padding-32">
     <div class="w3-bar w3-border">
-      <a href="/ehk0429" class="w3-bar-item w3-button">Home</a>
-      <a href="../movielist.do" class="w3-bar-item w3-button w3-hide-small "> 영화목록 </a>
-      <a href="./listAll" class="w3-bar-item w3-button">게시글목록</a>
+      <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="movielist.do" class="w3-bar-item w3-button w3-hide-small "> 영화목록 </a>
        </div>
  </div>
   </header>
   </div>
   <!-- Contact Container -->
-<div class="w3-container w3-padding-64 w3-theme-l5" id="contact" >
+<div class="w3-container w3-padding-64 w3-theme-l5">
   <div class="w3-row" >
     <div class="w3-col m5">
     <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">게시판 </span></div>
@@ -105,29 +104,17 @@ text-align:center;
       <p><a href = "hello.do">Login</a></p>
     </div>
     <div class="w3-col m7" >
-      <form method="POST" class="w3-container w3-card-4 w3-padding-16 w3-white" target="_blank">
-      <div class="w3-section">      
-        <label for="exampleInputEmail1">Title</label>
-        <input class="w3-input" type="text" name="title" class="form-control">
-      </div>
-       <div class="w3-section">      
-        <label for= "exampleInputPassword1">Content</label>
-        <textarea rows="10" cols="10" name="content" class="form-control"></textarea>
-      </div>  
-      <div class="w3-section">      
-        <label for= "exampleInputEmail1"> Writer</label>
-        <input class="w3-input" name="writer" class="form-control">
-      </div>
-     
-      <input class="w3-check" type="checkbox" checked name="Like">
-      <label>비밀글</label>
-      <button type="submit" class="w3-button w3-right w3-theme" >Write</button>
-      </form>
-    </div>
+        <div class="w3-padding-64">
+       <div class="w3-padding-16">
+       <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">검색</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+   	</div>
   </div>
-  </div>
-  <div class="w3-padding-64">
-  <table class="table table-border">
+  
+<table class="table table-border">
   <tr>
     <th>BNO</th>
     <th>TITLE</th>
@@ -151,11 +138,18 @@ text-align:center;
 
 
 </table>
+    
+    </div>
+  </div>
+  </div>
+  
+
+</div>
   	<div id="footer">
 	<blockquote class="blockquote-reverse">bootstrap jquery
 		css html</blockquote>
 	</div>
-	</div>
+
 </body>
 </html>
 

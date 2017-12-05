@@ -22,10 +22,7 @@ public class MemberController {
 				
 				//출력할 뷰 이름 설정
 				mav.setViewName("hello");
-				//전달될 데이터 저장 -request에 저장됨
-				//속성이름 , 데이터 최종view에서 불러올때 사용
-				mav.addObject("insa","안녕하세요");
-				
+				mav.addObject("인사", "insa");
 				return mav;
 			}
 }

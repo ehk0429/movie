@@ -28,9 +28,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style type="text/css">
-  
-
-
       body {
         padding-top: 40px;
         padding-bottom: 100px;
@@ -101,7 +98,7 @@ input[type=submit]:hover {
   <h1>Kim Eun Hye</h1>
   <div class="w3-padding-32">
     <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Home</a>
+      <a href="./" class="w3-bar-item w3-button">Home</a>
        </div>
   </div>
   </header>

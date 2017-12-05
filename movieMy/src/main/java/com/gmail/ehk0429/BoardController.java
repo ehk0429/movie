@@ -1,5 +1,7 @@
 package com.gmail.ehk0429;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +24,21 @@ public class BoardController {
 	@RequestMapping(value="/register" ,method=RequestMethod.GET)
 	public void registerGET(BoardVO board, Model model) throws Exception{
 		logger.info("register get............");
+		
 	}
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String registPOST(BoardVO board, Model model)throws Exception{
 
 		service.regist(board);
-		model.addAttribute("result", "success");
+		model.addAttribute("msg", "success");
 		return "/board/success";
 	}
+	@RequestMapping(value="/listAll",method = RequestMethod.GET)
+	public void listAll(Model model)throws Exception{
+		
+		model.addAttribute("list", service.listAll());
+		
+	}
+	
 }
