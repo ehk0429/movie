@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper 
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  <mapper namespace="com.gmail.ehk0429.mappers.movieMapper"> 
+	<!-- movie 전체 데이터 -->
+   <select id="getMovieList" resultType="Movie" > 
+   select movieCd, movieNm, openDt, audiAcc, scrnCnt from movie order by openDt DESC;
+   </select> 
+   
+	<!--movie 테이블에 데이터삽입 삽입 구문의 경우에는 resultType 생략 -->
+	<insert id="insertMovie" parameterType ="Movie"> 
+   insert into movie(movieCd,movieNm,openDt,audiAcc,scrnCnt) 
+   values(#{movieCd},#{movieNm},#{openDt},#{audiAcc},#{scrnCnt})
+   </insert> 
+   
+   <!-- movie 테이블에서 movieNm만 가져옴 -->
+    <select id="getMovieNm" resultType="Movie" > 
+   select movieNm from movie
+   </select> 
+   
+   <!-- Movie 테이블에서 movieCd 만 가져옴 getMoiveCd -->
+   <select id= "getMovieCd" resultType="Movie">
+   	select movieCd from movie
+   </select>
+   
+   <!-- movieimg 테이블에 ImgURL 삽입 insertImgUrl -->
+   <insert id="insertImgUrl" parameterType="MovieImg">
+   	insert into movieimg(movieCd, imgURL) 
+   	values(#{movieCd}, #{imgURL})
+   </insert>
+   
+   <!-- movieImg 테이블에서 모든 데이터 가져옴 getMovieImgList -->
+   <select id="getMovieImgList" resultType="MovieImg">
+   	select movieCd, imgUrl , openDt from movieimg order by openDt DESC
+   </select>
+   <!-- movieImg 테이블에서 moviecd로 movieImg를 가져오기 -->
+   <select id="getMovieImg" resultType="MovieImg">
+	select imgUrl from movieimg
+	where movieCd = #{movieCd}
+   </select>
+  </mapper>

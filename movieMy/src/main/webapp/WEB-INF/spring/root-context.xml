@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+	
+<!-- MySql 연결 datasource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/new?useSSL=false" />
+		<property name="username" value="root" />
+		<property name="password" value="0000" />
+	</bean>
+	<!--MyBatis의 SqlSession 사용을 위한 템플릿 객체 생성을 위한 IoC와 DI 설정 -->
+	<!-- mapper.xml 대신에 인터페이스를 사용했으면 mapperLocations 대신에 mapperInterface를 설정 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource"> 
+			<ref bean="dataSource"></ref>
+		</property>
+		<!-- 환경설정 파일의 경로 설정 value 부분의 경로는 자신의 디렉토리 경로와 비교해서 변경해줍니다. 항상 확인하기 -->
+		<property name="configLocation">
+			<value>classpath:/mybatis-config.xml</value>
+		</property>
+		<!-- 매퍼 파일의 경로 설정 value 부분의 경로는 자신의 디렉토리 경로와 비교해서 변경해줍니다. 항상 확인하기 -->
+		<!-- mappers 폴더 내에 어떤 폴더건 관계없이 파일의 이름이 Mapper.xml 로 끝나면 자동으로 인식하도록 설정 -->
+		<property name="mapperLocations">
+			<value>classpath:mappers/**/*Mapper.xml</value>
+		</property>
+	</bean>
+
+	<!-- SqlSessionTemplate 객체 생성을 위한 설정 이 객체를 sqlSession으로 받아서 실행 -->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"
+	destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+
+	<!-- 직접 만든 클래스들의 bean을 자동생성해주는 설정 -->
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.gmail.ehk0429.dao" />
+		
+</beans>

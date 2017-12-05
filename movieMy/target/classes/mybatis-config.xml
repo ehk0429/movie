@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration> 
+<!-- MyBatis Mapper 파일에서 패키지 이름을 사용하지 않아도 되도록 하는 설정 --> 
+<typeAliases> 
+<package name="com.gmail.ehk0429.domain"></package> 
+</typeAliases> 
+</configuration>
