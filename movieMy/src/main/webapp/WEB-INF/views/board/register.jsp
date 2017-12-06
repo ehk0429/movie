@@ -71,7 +71,7 @@ th {
 }
 
 #footer{
-padding : 64px;
+padding-top : 200px;
 text-align:center;
 }
 
@@ -126,35 +126,9 @@ text-align:center;
     </div>
   </div>
   </div>
-  <div class="w3-padding-64">
-  <table class="table table-border">
-  <tr>
-    <th>BNO</th>
-    <th>TITLE</th>
-    <th>WRITER</th>
-    <th>REGDATE</th>
-   	<th>VIEWCNT</th>
-  </tr>
-  	
-  	<c:forEach items="${list}" var="BoardVO">
-  	
-	<tr>
-		<td>${BoardVO.bno}</td>
-		<td><a href="#">${BoardVO.title}</a></td>
-		<td>${BoardVO.writer}</td>
-		<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${BoardVO.regdate}"/></td>
-		<td><span class="badge bg-red">${BoardVO.viewcnt}</span></td>
-	</tr>
-	
-	
-</c:forEach>
-
-
-</table>
   	<div id="footer">
 	<blockquote class="blockquote-reverse">bootstrap jquery
 		css html</blockquote>
-	</div>
 	</div>
 </body>
 </html>

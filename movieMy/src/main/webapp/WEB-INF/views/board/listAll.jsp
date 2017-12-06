@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page session= "false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,7 +27,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>register</title>
+<title>listAll</title>
 
 <style>
      body {
@@ -88,8 +89,8 @@ text-align:center;
   <h1>Kim Eun Hye</h1>
   <div class="w3-padding-32">
     <div class="w3-bar w3-border">
-      <a href="/" class="w3-bar-item w3-button">Home</a>
-      <a href="movielist.do" class="w3-bar-item w3-button w3-hide-small "> 영화목록 </a>
+      <a href="/ehk0429" class="w3-bar-item w3-button">Home</a>
+      <a href="/movielist.do" class="w3-bar-item w3-button w3-hide-small "> 영화목록 </a>
        </div>
  </div>
   </header>
@@ -127,7 +128,7 @@ text-align:center;
   	
 	<tr>
 		<td>${BoardVO.bno}</td>
-		<td><a href="#">${BoardVO.title}</a></td>
+		<td><a href="./read?bno=${BoardVO.bno}">${BoardVO.title}</a></td>
 		<td>${BoardVO.writer}</td>
 		<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${BoardVO.regdate}"/></td>
 		<td><span class="badge bg-red">${BoardVO.viewcnt}</span></td>

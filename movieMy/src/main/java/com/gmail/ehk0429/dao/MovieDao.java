@@ -21,7 +21,10 @@ public interface MovieDao {
 
 	// MovieImg 테이블에서 ImgUrl 만 삽입 메소드
 	public int insertImgUrl(MovieImg movieImg);
+	
 	// MovieImg 테이블의 전체 데이터 리턴 메소드
 	public List<MovieImg> getMovieImgList();
-
+	
+	// Movie테이블에서 MvoieCd로 조회 
+	public Movie readMovie(String movieCd);
 }

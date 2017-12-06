@@ -65,18 +65,14 @@ p{background-color :LightGray; font-family : "Raleway", Arial, sans-serif ; text
 	
 	<table align = "center" border = "1" class="table table-hover">
 	<tr>
-	<td colspan = "4" align ="center">
-	</td>
-	</tr>
-	<tr>
 		<th>제목</th>
 		<th>개봉일</th>
 		<th>관객수</th>
 		<th>스크린수</th>
 	</tr>
+	
 		<c:forEach items ="${movielist}" var="movielist">
 		<tr>
-			 
 			<td>${movielist.movieNm}</td>
 			<td>${movielist.openDt}</td>
 			<td>${movielist.audiAcc}</td>

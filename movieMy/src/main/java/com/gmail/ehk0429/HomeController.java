@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gmail.ehk0429.domain.Movie;
 import com.gmail.ehk0429.domain.MovieImg;
@@ -32,6 +33,14 @@ public class HomeController {
 		List<Movie> movielist = movieService.getMovieList();
 		model.addAttribute("movielist",movielist);
 		return "movielist";
+		
+	}
+	
+	@RequestMapping(value="readMovie.do", method= RequestMethod.GET)
+	public void readMovie(@RequestParam("movieCd") String movieCd, Model model ) throws Exception{
+		
+		
+		model.addAttribute( "readMovie",movieService.readMovie(movieCd));
 		
 	}
 }

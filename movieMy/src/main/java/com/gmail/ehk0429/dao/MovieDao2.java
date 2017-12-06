@@ -66,7 +66,7 @@ public class MovieDao2 {
 		try {
 			connect();
 			//sql 실행 객체 만들기 
-			pstmt = con.prepareStatement("select movieCd, movieNm, openDt, audiAcc, scrnCnt from movie");
+			pstmt = con.prepareStatement("select movieCd, movieNm, openDt, audiAcc, scrnCnt from movie order by openDt DESC");
 			
 			rs = pstmt.executeQuery();
 			while(rs.next()){
@@ -174,7 +174,7 @@ public class MovieDao2 {
 		List<MovieImg>list = new ArrayList<MovieImg>();
 		try {
 			connect();
-			pstmt = con.prepareStatement("select movieCd, imgUrl, openDt from movieimg ");
+			pstmt = con.prepareStatement("select movieCd, imgUrl, openDt from movieimg order by openDt DESC");
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				MovieImg movieImg = new MovieImg();

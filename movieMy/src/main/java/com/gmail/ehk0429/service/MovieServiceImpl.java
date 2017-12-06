@@ -45,5 +45,11 @@ public class MovieServiceImpl implements MovieService {
 		return dao.getMovieImgList();
 	}
 
+	@Override
+	public Movie readMovie(String movieCd) {
+		// TODO Auto-generated method stub
+		return dao.readMovie(movieCd);
+	}
+
 
 }

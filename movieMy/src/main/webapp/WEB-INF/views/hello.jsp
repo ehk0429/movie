@@ -98,7 +98,7 @@ input[type=submit]:hover {
   <h1>Kim Eun Hye</h1>
   <div class="w3-padding-32">
     <div class="w3-bar w3-border">
-      <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="./" class="w3-bar-item w3-button">Home</a>
        </div>
   </div>
   </header>

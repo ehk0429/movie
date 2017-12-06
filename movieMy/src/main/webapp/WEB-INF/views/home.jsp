@@ -29,6 +29,13 @@ body,h1 {font-family: "Raleway", Arial, sans-serif}
 h1 {letter-spacing: 6px}
 .w3-row-padding img {margin-bottom: 12px}
 p{background-color :LightGray; font-family : "Raleway", Arial, sans-serif ; text-align: center;}
+#footer{
+padding-top : 300px;
+text-align:center;
+}
+#contact{
+text-align:center;
+}
 </style>
 
 <title>HOME</title>
@@ -68,9 +75,8 @@ p{background-color :LightGray; font-family : "Raleway", Arial, sans-serif ; text
  <h2>...</h2>
  <p>Click MoviePoster:</p>
     <c:forEach items="${movieImg}" var="movieImg">
-		<!--  여기서 영화이미지 별로 경로 다르게 줘야함 생각해보기 파라미터 값을 넘겨주는 걸 생각하기 -->
 		 <div class="w3-third"><br>
-		<a href="movielist.do"><img src="${movieImg.imgUrl}"style="width:60%"
+		<a href="readMovie.do?movieCd=${movieImg.movieCd}"><img src="${movieImg.imgUrl}"style="width:60%"
 			class="img-rounded" vspace="10" hspace="10"></a>
 			</div>			
 			
@@ -82,37 +88,19 @@ p{background-color :LightGray; font-family : "Raleway", Arial, sans-serif ; text
 <!-- Contact Container -->
 <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
   <div class="w3-row">
-    <div class="w3-col m5">
-    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact </span></div>
+    
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar" >Contact </span></div>
       <h3>Address</h3>
       <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  010 4602 0429</p>
       <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  ehk0429@gmail.com</p>
-    </div>
-    <div class="w3-col m7">
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
-      <div class="w3-section">      
-        <label>Name</label>
-        <input class="w3-input" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">      
-        <label>Email</label>
-        <input class="w3-input" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">      
-        <label>Message</label>
-        <input class="w3-input" type="text" name="Message" required>
-      </div>  
-      <input class="w3-check" type="checkbox" checked name="Like">
-      <label>I Like it!</label>
-      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
-      </form>
-    </div>
+  
+   
   </div>
 </div>
 
 
   
-	<div class="footer">
+	<div id="footer">
 	<blockquote class="blockquote-reverse">bootstrap jquery
 		css html</blockquote>
 	</div>

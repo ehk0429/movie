@@ -18,7 +18,7 @@ public class DateAdd {
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(stDate);
 			//오늘 날짜
-			Date currentDate = df.parse("20171128");
+			Date currentDate = df.parse("20171206");
 			Calendar cal2 = Calendar.getInstance();
 			cal2.setTime(currentDate);
 			while (!cal.after(cal2)){

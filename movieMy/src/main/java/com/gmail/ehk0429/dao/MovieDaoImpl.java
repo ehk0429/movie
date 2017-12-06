@@ -48,6 +48,12 @@ public class MovieDaoImpl implements MovieDao {
 		return sqlSession.selectList(namespace+".getMovieImgList");
 	}
 
+	@Override
+	public Movie readMovie(String movieCd) {
+		return sqlSession.selectOne(namespace + ".readMovie",movieCd);
+		
+	}
+
 
 
 }

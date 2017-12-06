@@ -34,9 +34,8 @@
    <select id="getMovieImgList" resultType="MovieImg">
    	select movieCd, imgUrl , openDt from movieimg order by openDt DESC
    </select>
-   <!-- movieImg 테이블에서 moviecd로 movieImg를 가져오기 -->
-   <select id="getMovieImg" resultType="MovieImg">
-	select imgUrl from movieimg
-	where movieCd = #{movieCd}
+   
+   <select id="readMovie" resultType="Movie">
+   	select movieCd, movieNm, openDt, audiAcc, scrnCnt from movie where movieCd= #{movieCd}
    </select>
   </mapper>
